@@ -39,8 +39,9 @@ This project is a simple Spring Boot REST API that demonstrates basic backend de
    http://localhost:8080/students/{studentId}
 
 
-Technologies Used
-Java
-Spring Boot
-REST API
-Docker
+## Technologies Used
+
+- Java
+- Spring Boot
+- REST API
+- Docker
