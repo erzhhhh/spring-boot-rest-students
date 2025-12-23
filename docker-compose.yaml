@@ -1,0 +1,27 @@
+services:
+  spring-students:
+    build: .
+    ports:
+      - "4001:8080"
+    depends_on:
+      - mysql-db
+
+#  spring-teachers:
+#    build: .
+#    ports:
+#      - "4001:8080"
+#    depends_on:
+#      - mysql
+#    deploy:
+#      mode: replicated
+#      replicas: 3
+
+  mysql-db:
+    image: mysql:8.0.44-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:

@@ -1,0 +1,13 @@
+FROM ghcr.io/bell-sw/liberica-openjdk-alpine:21.0.9-cds AS buildstep
+
+COPY . /home/cutewhitewolf/app
+WORKDIR /home/cutewhitewolf/app
+RUN ./mvnw package
+
+
+FROM ghcr.io/bell-sw/liberica-openjre-alpine:21.0.9-cds
+COPY --from=buildstep /home/cutewhitewolf/app/target/demo-0.0.1-SNAPSHOT.jar /app/app.jar
+
+EXPOSE 8080
+
+CMD java -jar /app/app.jar com.erzhenika.demo.DemoApplication
