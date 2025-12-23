@@ -33,7 +33,9 @@ This project is a simple Spring Boot REST API that demonstrates basic backend de
    ```
 
 3. Access the API
+   
    http://localhost:8080/students
+   
    http://localhost:8080/students/{studentId}
 
 
